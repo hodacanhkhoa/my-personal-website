@@ -1,0 +1,172 @@
+:root {
+  --navy: #082d50;
+  --blue: #087eb8;
+  --pale: #eaf7fc;
+  --text: #173b56;
+  --muted: #647d90;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: Arial, Helvetica, sans-serif;
+  color: var(--text); background: #f3f9fc;
+}
+.topbar {
+  min-height: 72px; padding: 0 7%;
+  display: flex; justify-content: space-between; align-items: center;
+  background: #fff; box-shadow: 0 3px 18px #0b355312;
+}
+.logo { color: var(--navy); font-weight: 800; letter-spacing: .08em; text-decoration: none; }
+nav { display: flex; gap: 28px; }
+nav a { color: #597286; text-decoration: none; font-weight: 600; padding: 25px 0; }
+nav a:hover, nav a.active { color: var(--blue); }
+.intro { text-align: center; padding: 38px 20px 26px; }
+.eyebrow { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .2em; }
+.intro h1 { color: var(--navy); font-size: clamp(27px, 4vw, 42px); margin: 10px 0; }
+.intro p:last-child { color: var(--muted); margin: 0; }
+.aquarium {
+  width: min(1100px, 88%); height: 510px; margin: 0 auto;
+  position: relative; overflow: hidden; isolation: isolate;
+  border: 7px solid #d5edf7; border-radius: 22px;
+  background: linear-gradient(180deg, #28b5e4 0%, #087eb9 52%, #064b82 100%);
+  box-shadow: 0 18px 45px #07517c30;
+}
+.water-glow {
+  position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at 50% 0%, #c4f5ff55, transparent 52%);
+}
+.asset { position: absolute; height: auto; object-fit: contain; user-select: none; }
+.diver-one { width: 190px; left: 4%; top: 8%; }
+.diver-two { width: 190px; right: 5%; top: 8%; }
+.diver-three { width: 190px; left: 39%; top: 58%; }
+.shark { width: 190px;  left: 10%; top: 18%;
+  animation: sharkMove 10s linear infinite alternate; }
+.faint-school { width: 190px; left: 8%; top: 53%; animation: fishMove 13s ease-in-out infinite alternate; }
+.gold-school { width: 150px; right: 10%; top: 48%; animation: goldMove 11s ease-in-out infinite alternate; }
+.turtle { width: 140px; left: 43%; top: 75%; animation: turtleMove 9s ease-in-out infinite alternate; }
+.seabed {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 24px;
+  background: linear-gradient(180deg, #d6c58a, #a9945f); opacity: .85;
+}
+.note { text-align: center; color: var(--muted); margin: 24px 15px 12px; }
+.cta-wrap { text-align: center; margin: 18px 0 45px; }
+.cta {
+  display: inline-block; padding: 13px 23px; border-radius: 30px;
+  background: var(--blue); color: white; text-decoration: none; font-weight: 700;
+}
+.cta span { padding-left: 12px; }
+footer { text-align: center; padding: 22px; color: #8297a6; font-size: 13px; }
+@keyframes fishMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(490px); }
+}
+@keyframes goldMove {
+  from { transform: translateX(0) scaleX(1); }
+  to { transform: translateX(-440px) scaleX(-1); }
+}
+@keyframes turtleMove {
+  from { transform: translateX(-120px) scaleX(1); }
+  48% { transform: translateX(270px) scaleX(1); }
+  52% { transform: translateX(270px) scaleX(-1); }
+  to { transform: translateX(-120px) scaleX(-1); }
+}
+@keyframes sharkMove {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+
+    49% {
+        transform: translateX(500px) scaleX(1);
+    }
+
+    50% {
+        transform: translateX(500px) scaleX(-1);
+    }
+
+    99% {
+        transform: translateX(0) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+
+
+.cv-container { width: min(960px, 90%); margin: 35px auto 60px; }
+.back-link { color: var(--blue); font-weight: 700; text-decoration: none; display: inline-block; margin-bottom: 17px; }
+.resume { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 15px 45px #123c5512; }
+.resume-heading {
+  display: flex; align-items: center; gap: 24px; padding: 34px 42px;
+  background: linear-gradient(110deg, #e2f5fc, #f8fcff);
+  border-bottom: 1px solid #e2edf3;
+}
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+.resume-heading h1 { color: var(--navy); margin: 5px 0; font-size: 32px; }
+.resume-heading .eyebrow { margin: 0; }
+.subtitle { color: var(--muted); margin: 0; }
+.resume-content { display: grid; grid-template-columns: .85fr 1.5fr; }
+.side-column, .main-column { padding: 30px 38px; }
+.side-column { background: #f5f9fb; border-right: 1px solid #e7eef2; }
+.resume section { margin-bottom: 28px; }
+.resume section:last-child { margin-bottom: 0; }
+.resume h2 {
+  margin: 0 0 13px; color: var(--blue); font-size: 15px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.resume h3 { margin: 0 0 5px; color: var(--navy); }
+.resume p, .resume li { color: #536d80; line-height: 1.7; }
+.resume ul { padding-left: 20px; }
+.muted { color: #91a2ad !important; font-size: 13px; margin: 0; }
+@media (max-width: 700px) {
+  .topbar { padding: 16px 5%; align-items: flex-start; gap: 10px; flex-direction: column; }
+  nav { gap: 22px; } nav a { padding: 5px 0; }
+  .aquarium { width: 94%; height: 420px; }
+  .diver-one, .diver-two, .diver-three { width: 125px; }
+  .shark { width: 150px; }
+  .faint-school { width: 130px; }
+  .gold-school { width: 110px; }
+  .turtle { width: 100px; }
+  @keyframes sharkMove {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+
+    49% {
+        transform: translateX(500px) scaleX(1);
+    }
+
+    50% {
+        transform: translateX(500px) scaleX(-1);
+    }
+
+    99% {
+        transform: translateX(0) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}
+}
+  @keyframes fishMove { to { transform: translateX(190xpx); } }
+  @keyframes goldMove { to { transform: translateX(-170px) scaleX(-1); } }
+  @keyframes turtleMove {
+    from { transform: translateX(-70px) scaleX(1); }
+    48% { transform: translateX(100px) scaleX(1); }
+    52% { transform: translateX(100px) scaleX(-1); }
+    to { transform: translateX(-70px) scaleX(-1); }
+  }
+  .resume-content { grid-template-columns: 1fr; }
+  .side-column { border-right: 0; border-bottom: 1px solid #e7eef2; }
+  .resume-heading { padding: 25px 20px; }
+  .resume-heading h1 { font-size: 25px; }
+  .side-column, .main-column { padding: 25px; }
+
